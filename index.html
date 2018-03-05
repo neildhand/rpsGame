@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Rock Paper Scissors Part 1</title>
+  <title>Rock Paper Scissors</title>
 </head>
 
 <body>
@@ -17,6 +17,9 @@
   </div>
 
   <script type="text/javascript">
+      var userScore = 0;
+      var computerScore = 0;
+
     // Whenever a key is pressed, alert "pressed a button".
     document.onkeyup = function(event) {
       var userLetter = document.getElementById("userLetter");
@@ -51,7 +54,38 @@
         alert("Please select an r for rock, p for paper, and s for scissors.");
       }
 
-      
+
+
+      if(computerChoice === 'r' && userLowerChoice === 's'){
+        computerScore++;
+        console.log("The score is User: " + userScore + " Computer: " + computerScore);
+      } else if(computerChoice === 'p' && userLowerChoice === 'r'){
+        computerScore++;
+        console.log("The score is User: " + userScore + " Computer: " + computerScore);
+      } else if(computerChoice === 's' && userLowerChoice === 'p'){
+        computerScore++;
+        console.log("The score is User: " + userScore + " Computer: " + computerScore);
+      } else if(computerChoice === 's' && userLowerChoice === 'r'){
+        userScore++;
+        console.log("The score is User: " + userScore + " Computer: " + computerScore);
+      } else if(computerChoice === 'r' && userLowerChoice === 'p'){
+        userScore++;
+        console.log("The score is User: " + userScore + " Computer: " + computerScore);
+      } else if(computerChoice === 'p' && userLowerChoice === 's'){
+        userScore++;
+        console.log("The score is User: " + userScore + " Computer: " + computerScore);
+      } else if(computerChoice === 'r' && userLowerChoice === 'r'){
+        console.log("Tie! go again.");
+        console.log("The score is User: " + userScore + " Computer: " + computerScore);
+      } else if(computerChoice === 'p' && userLowerChoice === 'p'){
+        console.log("Tie! go again.");
+        console.log("The score is User: " + userScore + " Computer: " + computerScore);
+      } else if(computerChoice === 's' && userLowerChoice === 's'){
+        console.log("Tie! go again.");
+        console.log("The score is User: " + userScore + " Computer: " + computerScore);
+      } 
+
+
 
 
 
