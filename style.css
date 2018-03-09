@@ -1,0 +1,38 @@
+body{
+	background-color: black;
+	background-image: url("rrphantom.jpg");
+	background-repeat:no-repeat;
+	background-size: cover;
+}
+
+.container{
+	background-blend-mode: multiply;
+	background-color: transparent;
+
+
+}
+
+#head{
+	text-align: center;
+	color: red;
+}
+
+#game{
+	clear: both;
+}
+
+#computerChoiceId{
+	float: left;
+	margin-left: 10%;
+	color: red;
+	/*clear: both;*/
+}
+
+#userChoiceId{
+	/*clear: both;*/
+	/*overflow: auto;*/
+	float: right;
+	color: red;
+	margin-right: 10%;
+	padding: 400;
+}

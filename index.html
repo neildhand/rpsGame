@@ -4,20 +4,22 @@
 <head>
   <meta charset="UTF-8">
   <title>Rock Paper Scissors</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
 
-	<h1>Rock, Paper, Scissors! type the letter r for rock, p for paper, or s for scissors to play</h1>
-  <div id="score">
-    <h4> User: <span id="userScore"></span></h4>
-    <h4> Computer: <span id="computerScore"></span></h4>
-  </div>
+	<h1 id="head">Rock, Paper, Scissors! type the letter r for rock, p for paper, or s for scissors to play</h1>
+  <div class="container">
+    <div id="score">
+      <h4> User: <span id="userScore"></span></h4>
+      <h4> Computer: <span id="computerScore"></span></h4>
+    </div>
 
-  <div id="game">
-  	<h2> The computer chose <span id="computerLetter"> <strong> ....Nothing </strong></span></h2>
-  	<h2>You chose <span id="userLetter"> <strong>.....Nothing</strong></span></h2>
-
+    <div id="game">
+  	 <h2 id="computerChoiceId"> The computer chose <span id="computerLetter"> <strong> ....Nothing </strong></span></h2>
+  	 <h2 id="userChoiceId">You chose <span id="userLetter"> <strong>.....Nothing</strong></span></h2>
+    </div>
   </div>
 
   <script type="text/javascript">
@@ -45,28 +47,8 @@
       console.log("this is the computer choice: " + computerChoice);
 
 
-      // if(userLowerChoice === 'r'){
-      // 	document.getElementById("userLetter").innerHTML = "Rock!";      	
-      // } else if(userLowerChoice === 'p'){
-      // 	document.getElementById("userLetter").innerHTML = "Paper!";
-      // } else if(userLowerChoice === 's'){
-      // 	document.getElementById("userLetter").innerHTML = "Scissors!";
-      // } else{
-      // 	alert("Please select an r for rock, p for paper, and s for scissors.");
-      // }
 
-      // if(computerChoice === 'r'){
-      //   document.getElementById("computerLetter").innerHTML = "Rock!";        
-      // } else if(computerChoice === 'p'){
-      //   document.getElementById("computerLetter").innerHTML = "Paper!";
-      // } else if(computerChoice === 's'){
-      //   document.getElementById("computerLetter").innerHTML = "Scissors!";
-      // } else{
-      //   alert("Please select an r for rock, p for paper, and s for scissors.");
-      // }
-
-
-
+      //COMPUTER WINS
       if(computerChoice === 'r' && userLowerChoice === 's'){
         document.getElementById("userLetter").innerHTML = "Scissors!";
         document.getElementById("computerLetter").innerHTML = "Rock!";
@@ -85,7 +67,10 @@
         computerScore++;
         document.getElementById("computerScore").innerHTML = computerScore;
         console.log("The score is User: " + userScore + " Computer: " + computerScore);
-      } else if(computerChoice === 's' && userLowerChoice === 'r'){
+      } 
+      //-----------------------------------------------------------------------------------
+      //USER WINS
+      else if(computerChoice === 's' && userLowerChoice === 'r'){
         document.getElementById("userLetter").innerHTML = "Rock!";
         document.getElementById("computerLetter").innerHTML = "Scissors!";
         userScore++;
@@ -103,7 +88,10 @@
         userScore++;
         document.getElementById("userScore").innerHTML = userScore;
         console.log("The score is User: " + userScore + " Computer: " + computerScore);
-      } else if(computerChoice === 'r' && userLowerChoice === 'r'){
+      } 
+      //---------------------------------------------------------------------------------
+      //TIES
+      else if(computerChoice === 'r' && userLowerChoice === 'r'){
         document.getElementById("userLetter").innerHTML = "Rock!";
         document.getElementById("computerLetter").innerHTML = "Rock!";
         console.log("Tie! go again.");
@@ -118,13 +106,26 @@
         document.getElementById("computerLetter").innerHTML = "Scissors!";
         console.log("Tie! go again.");
         console.log("The score is User: " + userScore + " Computer: " + computerScore);
-      } else {
+      } 
+      //---------------------------------------------------------------------------------
+      //INCORRECT INPUT
+      else {
         alert("Please press 'r' for rock, 'p' for paper, or 's' for scissors!");
       }
+      //--------------------------------------------------------------------------------
 
 
+    function show_image(src, width, height, alt) {
+      var img = document.createElement("img");
+      img.src = src;
+      img.width = width;
+      img.height = height;
+      img.alt = alt;
+      img.margin = 100;
 
-
+    // This next line will just add it to the <body> tag
+    document.body.appendChild(img);
+}
 
 
       		
